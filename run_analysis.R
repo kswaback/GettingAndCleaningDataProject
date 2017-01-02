@@ -91,4 +91,8 @@ averageMeanSD <- aggregate(masterMeanSD, list(masterMeanSD$activityname, masterM
 colnames(averageMeanSD)[1:2] <- c("activityname", "subjectnumber")
 averageMeanSD <- averageMeanSD[,1:(ncol(averageMeanSD)-2)]
 
+## Output this dataset as a "tidy dataset" using write.table() function.
+
+write.table(averageMeanSD, file = "averageMeanSD.txt", row.name = FALSE)
+
 
